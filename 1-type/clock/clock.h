@@ -1,14 +1,13 @@
-int get_time(long long angl) {
-    int min, ch, sec;
-    if (angl<360){
-        return angl/6;}
-    else if(angl>=360 && angl<3600){
-        min = angl/360;
-        sec = (angl-(min*360))/6;
-        return min*100+sec;}
-    else{
-        chas = angl/3600;
-        min = (angl-(ch*3600))/360;
-        sec = (angl-(ch*3600)-(min*360))/6;
-        return ((ch*10)+min)*100+sec;}
+int get_time(long long angle) {
+    int hour, minutes, sec;
+    hour = angle / (21600);
+    int angle1;
+    
+    angle1 = angle - hour * 21600;
+    
+    minutes = (angle1 / 360);
+    sec = (angle - (hour * 21600) - minutes * 360) / 6;
+    int sum;
+    sum = hour * 1000 + minutes *100 + sec;
+    return sum;
 }

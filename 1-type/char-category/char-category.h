@@ -1,21 +1,50 @@
 #include <stdbool.h>
+
+
 bool is_digit(char x) {
-    if (x >= 48 && x <= 57){
-    return true;}
-    return false; 
+    int b;
+    b = (int)x;
+    if (b >= 48 && b <= 57){
+    return true;
+    }
+    else{
+    return 0;
+    }
 }
+
 bool is_letter(char x) {
-    if ((x >= 65 && x <= 90) || (x >= 97 && x <= 122)){
-    return true;}
-    return false; 
+    int b;
+    b = (int)x;
+    if ((b >= 65 && b <= 90) || (b >=97 && b <= 122)){
+    return true;
+    }
+    else{
+    return 0;
+    }
 }
+
 bool is_punctuation(char x) {
-    if ((x >= 33 && x <= 47) || (x >= 58 && x <= 64) || (x >= 91 && x <= 96) || (x >= 123 && x <= 126)){
-    return true;}
-    return false; 
+    int b;
+    b = (int)x;
+    if ((b >= 33 && b <= 47) || (b >= 58 && b <= 64) || (b >= 91 && b <= 96) || (b >= 123 && b <=126)){
+    return true;
+    }
+    else{
+    return 0;
+    }
 }
+
 int get_ascii_code(char first, char second, char third) {
-    int num; 
-    num = (first * 1000000) + (second * 1000) + third;
-    return num; 
+    int fir, sec, thir;
+    fir = (int)first;
+
+    sec = (int)second;
+
+
+    thir = (int)third;
+    int sum;
+    sum = (fir * 1000000) + (sec * 1000) + thir;
+
+    return (sum);
+
 }
