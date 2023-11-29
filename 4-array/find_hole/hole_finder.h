@@ -1,15 +1,15 @@
-#include <math.h>
-
+#include <stdio.h>
 int hole_finder(int matrix[], int length, int width){
-    int min = 100000, ind1 = 0, ind2 = 0;
-    
+    int min = 99999;
+    int x = 0;
+    int j = 0;
     for (int i = 0; i<length*width; i++){
         if (matrix[i]<min){
-            ind1 = i/width;
-            ind2 = i-(ind1*width);
-            min = matrix[i];}}
-    if (min == -13){
-        return 501;
+            x = i/width;
+            j = i-(x*width);
+            min = matrix[i];
+        }
     }
-    return ind1*100+ind2;
+    return x*100+j;
+    
 }
